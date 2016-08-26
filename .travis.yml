@@ -2,8 +2,8 @@ language: go
 
 install:
   - go get github.com/constabulary/gb/...
-  - apt-get install -y make
-  - apt-get install -y docker-engine
+  - sudo apt-get install -y make
+  - sudo apt-get install -y docker-engine
 
 script:
   - make all
