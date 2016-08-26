@@ -5,6 +5,10 @@ sudo: required
 services:
   - docker
 
+branches:
+  only:
+    - master
+
 install:
   - go get github.com/constabulary/gb/...
   - sudo apt-get install -y make
@@ -21,9 +25,12 @@ env:
     - secure: "jHzq/IZDZo3ZEfatxB1vnZLM8hFyJfiuehhN9ep3aKdAh7hginuT14wOM/Fnot0Gb7WHibdGoFi7khDh0Q43CAIfU3rEFlMGvLWiPhnKHyy8dbmdCFU1Y6vx9WZht+gXJKZzcsL3SfWB7q+ZbYLRWM/PebUqNIRwZg3bOBeLTHK3LzVg5e4STROJSiHqUwv/JMsmvP/mo/LGaQcxmLf00bwKBeuEGhpLp4NEi7y0G6jDAWpFlreMSwX5P4HkuZnzJWEr407aaArGPGX+CUm1f2fCQar5DbGyar5VqweY2HlHIcN1H8oVHwwbtsFjzpFgyPoilvxvs7uW0jhyzVxLhoLapXKa/YA3Edz9Yuw1hMSHOEWcPBzdHBrhbwZmhbS9qSX55WReXNuxPHoy7RrZE4np+tzz9gFxJFcmbWzlzJMQMBvosm5I7fhzydGsbrhY4ZXx0xzD91qbwa0QdWMZZMdg5aY7Yj5aNXZC4pTioxS4gHvhBUNMaNmec2jxlLdofzL0ckmR8aqvTY9eYyTLgKRPWv5HJPLY5XcO9SLAY5tMsnZLZqHa1rkrx4bd7IfGD7XVgUeB+HBg33zJR1Xx68HB2avvbNOYzNIOVNdJvv+8uSoZS7aMsOxWmpwfZ9bNqk2H27QzyDv5PlHKDutXSN1aSomAwjjPQISXk4DGHDA="
 
 deploy:
+  skip_cleanup: true
   provider: releases
   api_key:
     secure: qzwIN2VU9T7stmN/Jklwf9RagcBOoql6oWL1C5aBsUdUcaeel8lX76NvfYI3EDenK0IdYd9rO9GLiEYVAeBCYtafaD5o++Ybfpwki2gYv4DWxn8Wqv6wtGIP9OPLY3vmGMPxZQ+BZMzPdfYktz6EKkY0Vod++Rh7hrAHKbXs5C1kerMFyo5YO12EK42dOZtqUmiymwuY2X+dQIB3H3NtZ7AyeH/t/T5LAELHQXC8FYuyOjf4JwherxOrjxI6Trs14KrfdcAfXCYeLuUL/mthSL0s5qlOKIf7vHSOmko1WC6ggcH6dMKgXQGA52S9NxvFFSkZUCAtggntWNFc7vMyXtX59wVtcNtRsqrxPj5gUAwfQeU8R3MYBJ3AJQdI4u+9hDtNNyfN2mQWgBVdJS7/2b18fqgqyMyF/dGMVbu7OlRYqHpOTgKmbPJwuVorCO5wZl+z5XoYePsSWw8yFbUry2UHOOO9hYVm9bzihjdVf8WAUsV3hdMvCQ84kWWZ4WKmENWTe/Sf3ZFgKTBoaKTPuoYz6T2UV/dX5RPcAv7+eYzG0JpOHvvyjKGn5XDZk5TsLfgG/o60EmlULNci0s0GIUbrSbL6KcZoleWmYumiBTqOyBlu6XWQnmU4YCqTviGdGD0BhaLpAMCpGwIX5UnKkR9XuEdH0hcO204abKwS690=
-  file: hashiconf.deployable.yml
+  file:
+    - hashiconf.deployable.yml
   on:
+    tags: false
     repo: timperrett/hashiconf-2016-demo
