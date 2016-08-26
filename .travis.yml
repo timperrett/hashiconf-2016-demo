@@ -1,9 +1,13 @@
 language: go
 
+sudo: required
+
+services:
+  - docker
+
 install:
   - go get github.com/constabulary/gb/...
   - sudo apt-get install -y make
-  - sudo apt-get install -y docker-engine
 
 script:
   - make all
