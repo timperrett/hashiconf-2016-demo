@@ -2,6 +2,16 @@ language: go
 
 install:
   - go get github.com/constabulary/gb/...
+  - apt-get install -y make
+  - apt-get install -y docker-engine
 
 script:
-  - make docker
+  - make all
+
+deploy:
+  provider: releases
+  api_key:
+    secure: qzwIN2VU9T7stmN/Jklwf9RagcBOoql6oWL1C5aBsUdUcaeel8lX76NvfYI3EDenK0IdYd9rO9GLiEYVAeBCYtafaD5o++Ybfpwki2gYv4DWxn8Wqv6wtGIP9OPLY3vmGMPxZQ+BZMzPdfYktz6EKkY0Vod++Rh7hrAHKbXs5C1kerMFyo5YO12EK42dOZtqUmiymwuY2X+dQIB3H3NtZ7AyeH/t/T5LAELHQXC8FYuyOjf4JwherxOrjxI6Trs14KrfdcAfXCYeLuUL/mthSL0s5qlOKIf7vHSOmko1WC6ggcH6dMKgXQGA52S9NxvFFSkZUCAtggntWNFc7vMyXtX59wVtcNtRsqrxPj5gUAwfQeU8R3MYBJ3AJQdI4u+9hDtNNyfN2mQWgBVdJS7/2b18fqgqyMyF/dGMVbu7OlRYqHpOTgKmbPJwuVorCO5wZl+z5XoYePsSWw8yFbUry2UHOOO9hYVm9bzihjdVf8WAUsV3hdMvCQ84kWWZ4WKmENWTe/Sf3ZFgKTBoaKTPuoYz6T2UV/dX5RPcAv7+eYzG0JpOHvvyjKGn5XDZk5TsLfgG/o60EmlULNci0s0GIUbrSbL6KcZoleWmYumiBTqOyBlu6XWQnmU4YCqTviGdGD0BhaLpAMCpGwIX5UnKkR9XuEdH0hcO204abKwS690=
+  file: hashiconf.deployable.yml
+  on:
+    repo: timperrett/hashiconf-2016-demo

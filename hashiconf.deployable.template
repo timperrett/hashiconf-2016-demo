@@ -1,0 +1,7 @@
+---
+name: hashiconf-1.0
+version: __VERSION__
+output:
+  kind: container
+  from: alpine:3.4
+  image: timperrett/hashiconf-2016-demo-1.0:__VERSION__
