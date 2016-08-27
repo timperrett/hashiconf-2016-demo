@@ -1,0 +1,14 @@
+---
+units:
+  - name: hashiconf-2016-demo
+    description: >
+      an example job that just prints
+      hello world, and exits.
+    type: job
+    schedule: daily
+    retries: 2
+
+namespaces:
+  - name: devel
+    units:
+      - ref: hashiconf-2016-demo
