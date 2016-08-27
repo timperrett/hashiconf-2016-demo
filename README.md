@@ -12,4 +12,4 @@ This repository contains the small demo job used for my Hashiconf 2016 demo. It 
 1. `alias fswatch="$GOPATH/bin/fswatch"
 1. `fswatch`
 
-This should give continous compilation without the tedious need to constantly restart `gb build`
+This should give continous compilation without the tedious need to constantly restart `gb build`.
