@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/timperrett/hashiconf-2016-demo.svg?branch=master)](https://travis-ci.org/timperrett/hashiconf-2016-demo)
 
-This repository contains the small demo job used for my Hashiconf 2016 demo. It is not intended to be a particularly interesting demo project, but instead to demonstrate that
+This repository contains the small demo job used for my Hashiconf 2016 demo. It is not intended to be a particularly interesting demo project, but instead to demonstrate the workflow that *Nelson* enables.
 
 ## Development
 
